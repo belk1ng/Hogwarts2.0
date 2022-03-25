@@ -1,0 +1,243 @@
+// Import variables
+@import "../../variables.scss";
+
+// Background images for faculties
+.faculty--logo {
+  height: 400px;
+  width: 300px;
+  border-radius: 1rem;
+
+  -webkit-box-shadow: 8px 7px 8px 3px rgba(22, 29, 34, 0.2);
+  -moz-box-shadow: 8px 7px 8px 3px rgba(22, 29, 34, 0.2);
+  box-shadow: 8px 7px 8px 3px rgba(22, 29, 34, 0.2);
+}
+
+.slytherin--content__logo {
+  background: url(../../img/slytherin.jpeg) no-repeat 48% 50%;
+  background-size: cover;
+}
+
+.gryffindor--content__logo {
+  background: url(../../img/gryffindor.jpeg) no-repeat 48% 50%;
+  background-size: cover;
+}
+
+.ravenclaw--content__logo {
+  background: url(../../img/ravenclow.jpeg) no-repeat 48% 50%;
+  background-size: cover;
+}
+
+.hufflepuff--content__logo {
+  background: url(../../img/hufflepuff.jpeg) no-repeat 48% 50%;
+  background-size: cover;
+}
+
+// Default pics for certain house character
+.character__image--gryffindor {
+  background: url(../../img/default-gryffindor.jpeg) no-repeat 50% 50%;
+  background-size: cover;
+  min-width: 30%;
+}
+
+.character__image--slytherin {
+  background: url(../../img/default-slythering.jpeg) no-repeat 50% 50%;
+  background-size: cover;
+  min-width: 30%;
+}
+
+.character__image--hufflepuff {
+  background: url(../../img/default-hufflepuff.jpeg) no-repeat no-repeat 50% 50%;
+  background-size: cover;
+  min-width: 30%;
+}
+
+.character__image--ravenclaw {
+  background: url(../../img/default-ravenclaw.jpeg) no-repeat no-repeat 50% 50%;
+  background-size: cover;
+  min-width: 30%;
+}
+
+// Page styles
+.faculty--content {
+  flex: 1 1 auto;
+  padding: 20px 0 20px;
+
+  background: $pickled-bluewood;
+
+  .faculty--content__preview {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .faculty--content__short-desc {
+      max-width: 50%;
+      width: 100%;
+
+      @media screen and (max-width: 857px) {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .faculty--content__name {
+        color: $crusta;
+        font-size: 80px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-family: "Harry";
+      }
+
+      .faculty--content__phrase {
+        font-family: "Josefin Sans", sans-serif;
+        width: 60%;
+        text-align: center;
+        font-size: 1.2rem;
+        margin: 0 auto;
+        color: $crusta;
+        font-style: italic;
+
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .faculty--content__about-wrapper {
+    margin: 20px auto 0;
+
+    .faculty--content__about {
+      color: $crusta;
+      margin: 0 0.5rem;
+      text-align: left;
+      font-size: 1.2rem;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 1023px) {
+        text-align: center;
+      }
+    }
+
+    .faculty--content__characters-container {
+      margin-top: 25px;
+      color: $crusta;
+
+      .charaters-list__title {
+        font-size: 2.3rem;
+        margin-bottom: 0 0.5rem 1.5rem;
+      }
+
+      .characters__list {
+        .character {
+          cursor: pointer;
+          width: 55%;
+          margin: 15px auto;
+          border: 1px solid $crusta;
+          border-radius: 0.25rem;
+          transition: transform 0.3s ease;
+
+          overflow: hidden;
+          white-space: pre-wrap;
+
+          @media screen and (max-width: 495px) {
+            width: 85%;
+
+            .character__short-data {
+              max-width: 100%;
+              width: 100%;
+              text-align: left;
+            }
+          }
+
+          &:hover {
+            transform: scale(1.05);
+          }
+
+          &:hover .character--wrapper .character__short-readmore {
+            opacity: 1;
+            transform: translateY(5px);
+          }
+
+          .character--wrapper {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            .character__about {
+              background: transparent;
+              display: flex;
+              width: 100%;
+              height: 150px;
+
+              .character__image {
+                width: 30%;
+                height: 100%;
+                border-radius: 0.25rem;
+              }
+
+              .character__short-data {
+                margin-left: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+
+                @media screen and (max-width: 802px) {
+                  text-align: left;
+                  min-width: 75%;
+                }
+
+                .character__short-fullname {
+                  font-size: 1.2rem;
+                  font-style: italic;
+                  font-weight: 700;
+                }
+
+                .character__short-ancestry {
+                  text-transform: capitalize;
+                }
+              }
+            }
+
+            .character__short-readmore {
+              margin: 15px;
+              color: $crusta;
+              position: relative;
+              text-decoration: none;
+              opacity: 0;
+              transform: translateY(-20px);
+              transition: all 0.3s ease;
+
+              @media screen and (max-width: 590px) {
+                display: none;
+              }
+
+              &:before {
+                position: absolute;
+                background: $crusta !important;
+                content: "";
+                bottom: -2px;
+                left: 0;
+                transition: all 0.3s ease;
+
+                height: 1px;
+                width: 0;
+                opacity: 0;
+                background: $atomic-tangerine;
+              }
+
+              &:hover::before {
+                width: 100%;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

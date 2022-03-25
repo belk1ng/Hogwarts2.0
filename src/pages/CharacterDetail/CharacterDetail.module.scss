@@ -1,0 +1,52 @@
+@import "../../variables.scss";
+
+.character-detail-container {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .character-data {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0 15px;
+
+        .character-image {
+            border-radius: 10rem;
+            object-fit: contain;
+            max-width: 300px;
+            max-height: 400px;
+
+            -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.32);
+            -moz-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.32);
+            box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.32);
+
+            @media screen and (max-width: 687px) {
+                margin: 15px 0;
+            }
+        }
+
+        .character_container_image {
+            height: 300px;
+            width: 150px;
+        }
+
+        .character-main-data {
+            margin-left: 20px;
+            text-align: left;
+            max-width: 55%;
+            color: $crusta;
+
+            @media screen and (max-width: 687px) {
+                max-width: 100%;
+            }
+
+            .character-name {
+                font-size: 34px;
+            }
+        }
+    }
+}

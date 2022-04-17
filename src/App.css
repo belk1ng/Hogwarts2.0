@@ -50,3 +50,37 @@ main {
   margin: 0 auto;
   padding-bottom: 2rem;
 }
+
+footer {
+    margin-top: 100px;
+}
+
+.footer__link {
+    position: relative;
+
+    display: inline-block;
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    width: auto;
+    text-decoration: none;
+    color: rgb(252, 118, 67);
+}
+
+.footer__link:after {
+    position: absolute;
+    content: "";
+    bottom: -2px;
+    right: 0;
+
+    width: 0%;
+    height: 1px;
+    background-color: rgb(252, 118, 67);
+
+    transition: .3s ease;
+}
+
+.footer__link:hover:after {
+    width: 100%;
+}
+
